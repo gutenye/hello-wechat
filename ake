@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+deploy() {
+  rsync -avhP ./ root@server:/app/wechat1/ --exclude node_modules
+}
+
+case "$1" in
+  d | deploy ) deploy ;;
+esac
